@@ -1,0 +1,67 @@
+<form>
+  <!-- Contenedor principal -->
+  <div fxLayout="row" fxLayoutGap="20px">
+    <!-- Contenedor Derecha -->
+    <div fxLayout="column" fxFlex="50" fxLayoutGap="20px">
+      <!-- Nombre -->
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input matInput />
+      </mat-form-field>
+      <!-- Cedula -->
+      <mat-form-field appearance="fill">
+        <mat-label>Cedula</mat-label>
+        <input matInput />
+      </mat-form-field>
+      <!-- Telefono -->
+      <mat-form-field appearance="fill">
+        <mat-label>Telefono</mat-label>
+        <input matInput />
+      </mat-form-field>
+
+      <!-- Fecha de nacimiento -->
+      <mat-form-field appearance="fill">
+        <mat-label>Fecha de nacimiento</mat-label>
+        <input matInput [matDatepicker]="picker" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <!-- Contenedor de la izquierda -->
+    <div fxLayout="column" fxFlex="50" fxLayoutGap="20px">
+      <!-- Cliente para el que trabaja -->
+      <mat-form-field appearance="fill">
+        <mat-label>Cliente para el que trabaja</mat-label>
+        <input matInput />
+      </mat-form-field>
+
+      <!-- Sede de trabajo -->
+      <mat-form-field appearance="fill">
+        <mat-label>Sede de trabajo</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of [1, 2, 3, 4]" [value]="food">
+            {{ food }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- Usuario que esta haciendo el registro -->
+      <mat-form-field appearance="fill">
+        <mat-label>Usuario registro</mat-label>
+        <input matInput />
+      </mat-form-field>
+
+      <!-- Genero -->
+      <mat-radio-group aria-label="Seleccione un genero" fxLayoutGap="10px">
+        <mat-radio-button value="M">Masculino</mat-radio-button>
+        <mat-radio-button value="F">Femenino</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </div>
+  <!-- Botones -->
+  <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="10px">
+    <button mat-flat-button color="primary">Guardar</button>
+    <button mat-flat-button color="warn">Cancelar</button>
+  </div>
+</form>
